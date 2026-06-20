@@ -1,0 +1,236 @@
+/* Hoja de estilos global */
+body {
+    background-color: #ffffff;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: #111111;
+}
+
+.main-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* --- ENCABEZADOS Y BADGES --- */
+.quiz-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 20px;
+}
+.quiz-header h1, .quiz-header h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 8px;
+}
+.quiz-header p {
+    font-size: 1.1rem;
+    color: #666666;
+    margin-bottom: 15px;
+}
+.progress-pill {
+    background-color: #f0fdf4;
+    color: #166534;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    display: inline-block;
+    border: 1px solid #bbf7d0;
+}
+
+/* --- CONTENEDOR DE PREGUNTA --- */
+.question-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+.img-placeholder {
+    width: 100%;
+    max-width: 450px;
+    height: 180px;
+    background-color: #f9fafb;
+    border: 2px dashed #d1d5db;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    margin: 0 auto 35px auto;
+    font-size: 0.9rem;
+}
+
+/* --- INCISOS (ESTILO ASISTENTE DIRECTO) --- */
+.custom-option {
+    border: 2px solid #00c853;
+    border-radius: 12px;
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #00c853;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0,200,83,0.05);
+}
+.custom-option:hover {
+    background-color: #f0fdf4;
+    transform: translateY(-1px);
+}
+.custom-option .bullet {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00c853;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: inline-block;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+.custom-option.selected {
+    background-color: #00c853;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,200,83,0.2);
+}
+.custom-option.selected .bullet {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.custom-option input[type="radio"] {
+    display: none;
+}
+
+/* --- BOTONES --- */
+.btn-premium {
+    font-weight: 700;
+    padding: 15px 40px;
+    font-size: 1.15rem;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.2s ease;
+}
+.btn-green {
+    background-color: #00c853;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(0,200,83,0.3);
+}
+.btn-green:hover {
+    background-color: #00a844;
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+.btn-dark-p {
+    background-color: #111111;
+    color: #ffffff;
+}
+.btn-dark-p:hover {
+    background-color: #222222;
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+/* --- NAVEGACIÓN --- */
+.nav-btn {
+    padding: 12px 35px;
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    transition: all 0.2s ease;
+}
+.btn-next {
+    background-color: #111111;
+    color: #ffffff;
+    border: none;
+}
+.btn-next:hover {
+    background-color: #222222;
+}
+.btn-prev {
+    background-color: #ffffff;
+    color: #666666;
+    border: 1px solid #d1d5db;
+}
+.btn-prev:hover {
+    background-color: #f9fafb;
+    color: #333333;
+}
+.btn-prev:disabled {
+    background-color: #f3f4f6;
+    color: #9ca3af;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+}
+
+/* --- REVISIÓN FINAL --- */
+.result-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.result-box {
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 5px solid #cccccc;
+    background-color: #f9fafb;
+}
+.result-box.correct-match {
+    border-left-color: #2e7d32;
+    background-color: #f0fdf4;
+}
+.result-box.incorrect-match {
+    border-left-color: #c62828;
+    background-color: #fef2f2;
+}
+/* --- AJUSTES PARA IMÁGENES EN LOS INCISOS --- */
+.custom-option {
+    align-items: flex-start; /* Alinea el bullet al inicio (arriba) por si la imagen es alta */
+    padding: 16px 20px;
+}
+
+.custom-option .bullet {
+    margin-top: 4px; /* Centra el círculo con la primera línea de texto */
+}
+
+.option-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.option-img {
+    max-height: 120px; /* Evita que las imágenes de los incisos se deformen o sean gigantes */
+    width: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #ffffff; /* Fondo blanco para que resalten las fórmulas */
+    padding: 6px;
+    display: inline-block;
+}
+
+/* Caja discontinua temporal de prueba para cuando no haya imagen lista */
+.option-img-placeholder {
+    font-size: 0.8rem;
+    color: #888888;
+    border: 1px dashed #d1d5db;
+    border-radius: 6px;
+    padding: 6px;
+    text-align: center;
+    background-color: #f9fafb;
+}
+
+/* Cambia el diseño del placeholder dinámicamente al seleccionar el inciso */
+.custom-option.selected .option-img-placeholder {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.15);
+}

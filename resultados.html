@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="main-container">
+    <div class="result-card text-center">
+        <h2 class="display-5 fw-bold mb-3">¡Cuestionario Finalizado!</h2>
+        <p class="fs-4 text-muted mb-4" id="scoreText">Procesando respuestas...</p>
+        
+        <div class="progress mb-4" style="height: 25px; border-radius: 50px;">
+            <div id="scoreBar" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 0%"></div>
+        </div>
+
+        <button class="btn btn-premium btn-dark-p mb-5" onclick="reiniciarCuestionario()">Reiniciar cuestionario</button>
+        
+        <div class="text-start mt-4">
+            <h3 class="h4 fw-bold mb-4" style="color: #333333;">Revisión detallada de respuestas:</h3>
+            <div id="reviewContainer"></div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    window.onload = function() {
+        procesarYMostrarResultados();
+    };
+
+    function reiniciarCuestionario() {
+        seleccionarPreguntasAleatorias();
+        window.location.href = "cuestionario.html";
+    }
+</script>
+</body>
+</html>
