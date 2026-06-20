@@ -182,6 +182,8 @@ body {
     margin-bottom: 15px;
     border-left: 5px solid #cccccc;
     background-color: #f9fafb;
+    overflow: hidden;         /* Evita colapsos por desbordamiento */
+    word-wrap: break-word;     /* Fuerza el salto de línea en textos largos */
 }
 .result-box.correct-match {
     border-left-color: #2e7d32;
@@ -191,14 +193,27 @@ body {
     border-left-color: #c62828;
     background-color: #fef2f2;
 }
+
+/* --- CORRECCIÓN DEFINITIVA PARA EL DESBORDE DE IMÁGENES EN REVISIÓN --- */
+.result-box img {
+    max-width: 100% !important;   /* Obliga a la imagen a quedarse estrictamente dentro del cuadro */
+    height: auto !important;      /* Reajusta el alto dinámicamente para evitar distorsiones */
+    max-height: 140px !important; /* Mantiene un límite de tamaño altamente estético en pantalla */
+    object-fit: contain;
+    display: block;
+    margin-top: 12px;
+    background-color: #ffffff;    /* Fondo blanco impecable para aislar fórmulas complejas */
+    border-radius: 6px;
+}
+
 /* --- AJUSTES PARA IMÁGENES EN LOS INCISOS --- */
 .custom-option {
-    align-items: flex-start; /* Alinea el bullet al inicio (arriba) por si la imagen es alta */
+    align-items: flex-start; /* Alinea el bullet al inicio superior por si el inciso es alto */
     padding: 16px 20px;
 }
 
 .custom-option .bullet {
-    margin-top: 4px; /* Centra el círculo con la primera línea de texto */
+    margin-top: 4px; /* Centra el círculo relativo a la primera línea de texto */
 }
 
 .option-content {
@@ -208,11 +223,11 @@ body {
 }
 
 .option-img {
-    max-height: 120px; /* Evita que las imágenes de los incisos se deformen o sean gigantes */
+    max-height: 120px; /* Acota las imágenes de los incisos para que sean homogéneas */
     width: auto;
     object-fit: contain;
     border-radius: 6px;
-    background: #ffffff; /* Fondo blanco para que resalten las fórmulas */
+    background: #ffffff; 
     padding: 6px;
     display: inline-block;
 }
